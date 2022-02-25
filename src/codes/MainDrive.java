@@ -17,6 +17,25 @@ public class MainDrive {
 				Random myRandom = new Random();
 				int randomNum = myRandom.nextInt(9)+1; // 1~10 직전 (9)
 				
+				boolean isDuplOk = true;
+				
+				for (int num : cpuNumbers) {
+					if(num == randomNum) {
+						isDuplOk = false;
+						break;
+					}
+				}
+				
+				if (isDuplOk) {
+					cpuNumbers[i] = randomNum;
+					break;
+				}
+				
+//				문제 확인용 for문
+				for (int num : cpuNumbers) {
+					System.out.println(num);
+				}
+				
 			}
 		}
 		
